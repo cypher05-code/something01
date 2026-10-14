@@ -1,0 +1,137 @@
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>A Little Something for You ❤️</title>
+
+    <!-- Connect our CSS file -->
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <!-- Section 1: Welcome screen -->
+    <main>
+
+        <section id="welcome" class="welcome-section">
+
+            <p class="small-heading">A LITTLE SOMETHING FOR YOU</p>
+
+            <h1>Hey, you. ❤️</h1>
+
+            <p class="intro">
+                There are a few things I'd like to say.
+            </p>
+
+            <!-- Section 2: Letter opening area -->
+            <div class="envelope" id="envelope">
+
+                <div class="envelope-icon" aria-hidden="true">
+                    💌
+                </div>
+
+                <p>A letter, written from the heart.</p>
+
+                <button
+                    type="button"
+                    id="openButton"
+                    aria-controls="apologyLetter"
+                    aria-expanded="false">
+                    Open my letter
+                </button>
+
+            </div>
+
+        </section>
+
+
+        <!-- Section 3: Apology letter -->
+        <section
+            id="apologyLetter"
+            class="letter-section"
+            aria-labelledby="letterTitle"
+            hidden>
+
+            <article class="letter-card">
+
+                <p class="small-heading">A FEW WORDS FROM ME</p>
+
+                <h2 id="letterTitle" tabindex="-1">I'm sorry.</h2>
+
+                <div class="letter-content">
+
+                    <p>Hey,</p>
+
+                    <p>
+                        ik jo bhi hua that was my fault and i feel very bad
+                        because of me you was panicking nd feeling restless
+                        i have told you ki mere friendships ache nahi rahe hai in past
+                        nd mujhe bhi aisa feel hua hai nd see i have done same to you. 
+                    </p>
+
+                    <p>
+                        I'm sorry because of me tujhe ye sab face karna para
+                        i dont want you to feel the way i felt in past because of 
+                        friendships so i will do anything to make up. 
+                    </p>
+
+                    <p>
+                        I know that words se kuch nahi hota efforts and actions matters
+                        so just see my efforts and actions if you feel like ki kuch fix 
+                        nahi ho raha so i will accept whatever you will decide.
+                    </p>
+
+                    <p>
+                        maine tujhe abtak ache se treat kiya hai but ya kuch din phele 
+                        bohot badi mistake kiya hu but i promise ki i will try my best to make 
+                        up for that and wapas kabhi tujhe waisa feel na ho, so plz just give me 
+                        one chance.
+                    </p>
+
+                    <p>
+                        nd lastly i wanted to you to know that i care for you a lotttttt
+                        ik i deserve this but ya i will do anything to make up for that
+                        so ya plz forgive me i am really verryyyy sorryyyyy.
+
+                        and hn ye maine gpt ke help se banaya hai (laughing emoji).
+                    </p>
+
+                    <p class="signature">
+                        Take care of yourself. ❤️
+                    </p>
+
+                </div>
+
+                <button
+                    type="button"
+                    id="closeButton">
+                    Close the letter
+                </button>
+
+            </article>
+
+        </section>
+
+
+        <!-- Section 4: Closing message -->
+        <footer id="closing" class="closing-section">
+
+            <p>
+                No pressure. No expectations.
+                Just a message from the heart.
+            </p>
+
+        </footer>
+
+    </main>
+
+    <!-- Connect our JavaScript file -->
+    <script src="script.js"></script>
+
+</body>
+
+</html>

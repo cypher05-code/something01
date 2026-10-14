@@ -1,0 +1,343 @@
+
+/* ========================================
+   1. BASIC RESET
+======================================== */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+
+/* ========================================
+   2. COLOR AND DESIGN VARIABLES
+======================================== */
+
+:root {
+    --background: #faf6f1;
+    --paper: #fffdf9;
+    --primary: #985568;
+    --primary-dark: #754052;
+    --text: #3f3335;
+    --muted: #817376;
+    --border: #eadbd9;
+}
+
+
+/* ========================================
+   3. PAGE BACKGROUND AND DEFAULT TEXT
+======================================== */
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    min-height: 100vh;
+    font-family: Georgia, "Times New Roman", serif;
+    color: var(--text);
+    background:
+        radial-gradient(
+            circle at 15% 15%,
+            rgba(222, 174, 181, 0.25),
+            transparent 35%
+        ),
+        radial-gradient(
+            circle at 85% 80%,
+            rgba(235, 210, 186, 0.30),
+            transparent 35%
+        ),
+        var(--background);
+    line-height: 1.7;
+}
+
+
+/* ========================================
+   4. MAIN PAGE LAYOUT
+======================================== */
+
+main {
+    width: 100%;
+    overflow: hidden;
+}
+
+.welcome-section {
+    min-height: 90vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding: 70px 24px;
+    animation: fadeIn 1.2s ease both;
+}
+
+.small-heading {
+    font-family: Arial, sans-serif;
+    font-size: 0.72rem;
+    font-weight: 600;
+    letter-spacing: 3px;
+    color: var(--primary);
+    margin-bottom: 20px;
+}
+
+h1 {
+    font-size: clamp(2.8rem, 7vw, 5rem);
+    font-weight: 400;
+    line-height: 1.15;
+    margin-bottom: 18px;
+}
+
+.intro {
+    font-size: 1.05rem;
+    color: var(--muted);
+    max-width: 440px;
+    margin-bottom: 45px;
+}
+
+
+/* ========================================
+   5. ENVELOPE AREA
+======================================== */
+
+.envelope {
+    width: min(100%, 360px);
+    padding: 34px 24px;
+    background: rgba(255, 253, 249, 0.85);
+    border: 1px solid var(--border);
+    border-radius: 22px;
+    box-shadow: 0 18px 50px rgba(91, 55, 62, 0.08);
+    animation: float 4s ease-in-out infinite;
+    transition:
+        box-shadow 0.3s ease,
+        border-color 0.3s ease;
+}
+
+.envelope:hover {
+    box-shadow: 0 24px 60px rgba(91, 55, 62, 0.14);
+    border-color: #d7b5bb;
+}
+
+.envelope-icon {
+    font-size: 4rem;
+    margin-bottom: 12px;
+}
+
+.envelope p {
+    color: var(--muted);
+    margin-bottom: 24px;
+}
+
+
+/* ========================================
+   6. BUTTON DESIGN
+======================================== */
+
+button {
+    font: inherit;
+    font-family: Arial, sans-serif;
+    font-size: 0.9rem;
+    font-weight: 600;
+    color: white;
+    background: var(--primary);
+    border: 1px solid transparent;
+    border-radius: 50px;
+    padding: 15px 28px;
+    cursor: pointer;
+    transition:
+        background 0.3s ease,
+        transform 0.3s ease,
+        box-shadow 0.3s ease;
+}
+
+button:hover {
+    background: var(--primary-dark);
+    transform: translateY(-3px);
+    box-shadow: 0 8px 20px rgba(117, 64, 82, 0.2);
+}
+
+button:active {
+    transform: translateY(0);
+}
+
+button:focus-visible {
+    outline: 3px solid #c68c9b;
+    outline-offset: 4px;
+}
+
+
+/* ========================================
+   7. APOLOGY LETTER
+======================================== */
+
+.letter-section {
+    padding: 30px 24px 100px;
+    scroll-margin-top: 30px;
+    animation: fadeIn 0.8s ease both;
+}
+
+.letter-section[hidden] {
+    display: none;
+}
+
+.letter-card {
+    width: min(100%, 680px);
+    margin: 0 auto;
+    padding: clamp(28px, 6vw, 60px);
+    background: var(--paper);
+    border: 1px solid var(--border);
+    border-radius: 20px;
+    box-shadow: 0 25px 80px rgba(91, 55, 62, 0.10);
+}
+
+.letter-card h2 {
+    font-size: clamp(2.2rem, 5vw, 3.5rem);
+    font-weight: 400;
+    color: var(--primary-dark);
+    margin-bottom: 30px;
+}
+
+.letter-content p {
+    font-size: 1.05rem;
+    margin-bottom: 22px;
+}
+
+.signature {
+    margin-top: 35px;
+    color: var(--primary-dark);
+    font-style: italic;
+}
+
+.letter-card button {
+    margin-top: 15px;
+}
+
+
+/* ========================================
+   8. CLOSING MESSAGE
+======================================== */
+
+.closing-section {
+    padding: 30px 24px 50px;
+    text-align: center;
+}
+
+.closing-section p {
+    color: var(--muted);
+    font-size: 0.9rem;
+}
+
+
+/* ========================================
+   9. ANIMATIONS
+======================================== */
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(18px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes float {
+    0%, 100% {
+        transform: translateY(0);
+    }
+
+    50% {
+        transform: translateY(-8px);
+    }
+}
+
+
+/* ========================================
+   10. MOBILE RESPONSIVENESS
+======================================== */
+
+@media (max-width: 600px) {
+    .welcome-section {
+        min-height: 85vh;
+        padding: 50px 20px;
+    }
+
+    .small-heading {
+        font-size: 0.65rem;
+        letter-spacing: 2px;
+    }
+
+    .intro {
+        font-size: 0.95rem;
+        margin-bottom: 35px;
+    }
+
+    .envelope {
+        padding: 28px 20px;
+    }
+
+    .letter-section {
+        padding: 20px 16px 60px;
+    }
+
+    .letter-card {
+        border-radius: 16px;
+    }
+
+    .letter-content p {
+        font-size: 1rem;
+    }
+}
+
+
+/* Respect visitors who prefer less motion */
+@media (prefers-reduced-motion: reduce) {
+    *,
+    *::before,
+    *::after {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        scroll-behavior: auto !important;
+        transition-duration: 0.01ms !important;
+    }
+}
+
+
+/* Make buttons easier to tap on phones */
+button {
+    min-height: 48px;
+}
+
+/* Make keyboard focus easy to see */
+button:focus-visible {
+    outline: 3px solid #754052;
+    outline-offset: 4px;
+}
+
+/* Keep long words and text inside the letter */
+.letter-card {
+    overflow-wrap: anywhere;
+}
+
+/* Avoid unnecessary animation for visitors
+   who prefer reduced motion */
+@media (prefers-reduced-motion: reduce) {
+    html {
+        scroll-behavior: auto;
+    }
+
+    .welcome-section,
+    .letter-section,
+    .envelope {
+        animation: none;
+    }
+
+    button,
+    .envelope {
+        transition: none;
+    }
+}
